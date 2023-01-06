@@ -37,3 +37,5 @@ Anyway. Sometimes you don't have time to specify the `DestPath` parameter by typ
     cscript splittiff.js C:\Users\Public\Desktop\nature.tif
 
 After running the command, a Browse dialog box will appear (like the image below). It will let you easiliy select your desired folder in which to store the resulting image files (in this example, `F:\goodies`). Then you can click OK to start the operation. Upon successful completion, you will have 4 image files in the Goodies folder.
+
+![BrowseForFolder](https://user-images.githubusercontent.com/31417320/211037195-93791fe7-be1e-465a-8b8f-9033090c0cb1.jpg)
