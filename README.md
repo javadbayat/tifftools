@@ -39,3 +39,10 @@ Anyway. Sometimes you don't have time to specify the `DestPath` parameter by typ
 After running the command, a Browse dialog box will appear (like the image below). It will let you easiliy select your desired folder in which to store the resulting image files (in this example, `F:\goodies`). Then you can click OK to start the operation. Upon successful completion, you will have 4 image files in the Goodies folder.
 
 ![BrowseForFolder](https://user-images.githubusercontent.com/31417320/211037195-93791fe7-be1e-465a-8b8f-9033090c0cb1.jpg)
+
+By default, the resulting image files are created in full quality. If you want to reduce the quality of the resulting image files so that their size also decreases, then set their format to JPEG instead of PNG, and append `/q:` to the command line, followed by an integer between 1 and 100 which indicates your desired image quality. For example, the following command produces some JPEG image files with their quality set to 40.
+
+    cscript splittiff.js C:\Users\Public\Desktop\nature.tif F:\goodies\%d.jpg /q:40
+
+### My final wish
+> Wish one day my program will be introduced as an answer to [this SuperUser post](https://superuser.com/questions/44600/how-to-split-a-multipage-tiff-file-on-windows).
