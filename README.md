@@ -1,5 +1,5 @@
 # TIFF Tools
-This repository contains two free light-weight scripts - written in JScript - that can be used [to create and/or split multipage TIFF files](https://www.ilovefreesoftware.com/03/windows/image-photo/free-multipage-tiff-creator-to-create-multipage-tif-images.html). These scripts use [the Windows Image Acquisition (WIA) library v2.0](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/wiaaut/-wiaaut-startpage), which is implemented by the file `wiaaut.dll`, located in the `C:\Windows\System32` folder. The second version of the WIA library that is required for the scripts is shipped with Windows Vista and later; so **it is not possible to run these scripts on Windows XP or older versions of Windows**.
+This repository contains two free light-weight scripts - written in [JScript](http://msdn.microsoft.com/library/hbxc2t98.aspx) - that can be used [to create and/or split multipage TIFF files](https://www.ilovefreesoftware.com/03/windows/image-photo/free-multipage-tiff-creator-to-create-multipage-tif-images.html). These scripts use [the Windows Image Acquisition (WIA) library v2.0](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/wiaaut/-wiaaut-startpage), which is implemented by the file `wiaaut.dll`, located in the `C:\Windows\System32` folder. The second version of the WIA library that is required for the scripts is shipped with Windows Vista and later; so **it is not possible to run these scripts on Windows XP or older versions of Windows**.
 
 ## SplitTIFF.js
 `SplitTIFF.js` is a light-weight script (bearly 5.85 KB in size) that takes a multi-page TIFF file as input and stores each of its pages into a separate single-page image file in one of these formats: **PNG, TIFF, JPEG, BMP, or GIF**  
@@ -46,3 +46,20 @@ By default, the resulting image files are created in full quality. If you want t
 
 ### My final wish
 > Wish one day my program will be introduced as an answer to [this SuperUser post](https://superuser.com/questions/44600/how-to-split-a-multipage-tiff-file-on-windows).
+
+## MakeTIFF.js
+`MakeTIFF.js` is a light-weight script (bearly 7.61 KB in size) that takes several regular single-page image files as input, and merges them into one multi-page TIFF file. For the input image files, the supported formats are **PNG, TIFF, JPEG, BMP, and GIF**.  
+It's such a free, easy-to-use TIFF Creation utility! It is actually the inverse of `SplitTIFF.js` script.
+
+You can use this script in two modes: **Normal Mode** or **Browse Mode**. To use the script, you must first open a Command Prompt window and navigate to the directory where `MakeTIFF.js` is stored. Then read the below explainations for your desired mode, and follow the instructions.
+
+### Using in Normal Mode
+In the Command Prompt, execute `cscript maketiff.js`, followed by the space-delimited list of the input image files, followed by `/o`, followed by the path of the output TIFF file that is to be created. For example, the following command creates a multipage TIFF file containing three images from the `F:\exam` directory and three images from the `F:\river` directory. It then stores the resulting TIFF file into the path `F:\collection.tiff`.
+
+    cscript maketiff.js F:\exam\answersheet_alice.bmp F:\exam\answersheet_bob.bmp F:\exam\answersheet_emma.bmp F:\river\photo1.jpg F:\river\photo2.jpg F:\river\photo3.jpg /o F:\collection.tiff
+
+What is interesting is that each item in the list of input image files may include wildcards (`*` or `?`). So with the use of wildcards, the preceding command can be simplified as follows:
+
+    cscript maketiff.js F:\exam\answersheet_*.bmp F:\river\photo?.jpg /o F:\collection.tiff
+
+By default, the resulting TIFF file is compressed using the **LZW** algorithm. If you wish to change the compression scheme of the output TIFF file, then you can append `/c:` to the command, followed by one of the supported compression schemes (**`CCITT3`, `CCITT4`, `RLE`, or `LZW`**), or append **`/c:0` or `/c:Uncompressed`**, so the output TIFF file will not be compressed at all.
