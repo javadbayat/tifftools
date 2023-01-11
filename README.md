@@ -62,4 +62,25 @@ What is interesting is that each item in the list of input image files may inclu
 
     cscript maketiff.js F:\exam\answersheet_*.bmp F:\river\photo?.jpg /o F:\collection.tiff
 
-By default, the resulting TIFF file is compressed using the **LZW** algorithm. If you wish to change the compression scheme of the output TIFF file, then you can append `/c:` to the command, followed by one of the supported compression schemes (**`CCITT3`, `CCITT4`, `RLE`, or `LZW`**), or append **`/c:0` or `/c:Uncompressed`**, so the output TIFF file will not be compressed at all.
+By default, the resulting TIFF file is compressed using the **LZW** algorithm. If you wish to change the compression scheme of the output TIFF file, then you can append `/c:` to the command, followed by one of the supported compression schemes (**`CCITT3`, `CCITT4`, `RLE`, or `LZW`**), or append **`/c:0` or `/c:Uncompressed`**, so the output TIFF file will not be compressed at all. For example, the following command sets the compression scheme of the resulting TIFF file to `RLE`:
+
+    cscript maketiff.js F:\exam\answersheet_*.bmp F:\river\photo?.jpg /o F:\collection.tiff /c:RLE
+
+And the following command disables the compression of the resulting TIFF file:
+
+    cscript maketiff.js F:\exam\answersheet_*.bmp F:\river\photo?.jpg /o F:\collection.tiff /c:0
+
+**Note:** The compression schemes that can be specified with the `/c` parameter are case-sensitive.
+
+### Using in Browse Mode
+*If you consider the Normal Mode too difficult to use, then this mode provides an easier way to create a multipage TIFF file.*
+
+Open one or more File Explorer windows, and select the desired input image files there. Then while the File Explorer windows are open with the input image files being in the highlighted state, switch to the Command Prompt window and execute the following command:
+
+    cscript maketiff.js /b /o OutputTIFFFile
+
+where `OutputTIFFFile` is the path of the output multipage TIFF file that is to be created. For example, the following command stores the output TIFF file into the path `F:\collection.tiff`:
+
+    cscript maketiff.js /b /o F:\collection.tiff
+
+After executing the command, the script will automatically examine all those File Explorer windows and detect the selected input image files. Then it will merge the input image files into one multipage TIFF file, which will be stored in the path `F:\collection.tiff`.
