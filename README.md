@@ -21,6 +21,8 @@ After running the script with the aforementioned command, it generates some logs
 
     [notice] Done!
 
+**Note:** The script might need to create some temporary files during the operation. So before running the script, it is good to make sure that there is some free space in your Windows drive (usually `C:` Drive) for the temp files to be created properly; otherwise, the operation might fail. And don't worry about those temp files consuming your disk space; as they are automatically deleted right after the operation completes.
+
 ### Examples of usage
 Say, on our Desktop, we have a TIFF file named `nature.tif` with 4 pages. Now we are going to split it and place each of its pages in the directory `F:\goodies` as a separate image file.
 
@@ -99,3 +101,5 @@ And the following command disables the compression of the resulting TIFF file:
 After running the script with the aforementioned command, it generates some logs which are displayed in the Console window. The logs indicate the progress of the operation, as well as possible error messages. If the operation completes successfully, you will see the following message at the end of the logs:
 
     [notice] Done!
+
+**Note:** The script might need to create some temporary files during the operation. So before running the script, it is good to make sure that there is some free space in your Windows drive (usually `C:` Drive) for the temp files to be created properly; otherwise, the operation might fail. And don't worry about those temp files consuming your disk space; as they are automatically deleted right after the operation completes.
