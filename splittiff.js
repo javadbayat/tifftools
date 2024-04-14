@@ -19,7 +19,7 @@ try {
     var tiff = WSH.CreateObject("WIA.ImageFile");
 }
 catch (err) {
-    WSH.StdErr.WriteLine("[error] Unable to create an instance of the ImageFile object. Most likely you are running an old version of Microsoft Windows, which does not have Windows Image Acquisition (WIA) library v2.0 installed.");
+    WSH.StdErr.WriteLine("[error] Unable to create an instance of the ImageFile object. Most likely you are running an old version of Microsoft Windows, which lacks Windows Image Acquisition (WIA) library v2.0.");
     WSH.StdErr.WriteLine("  Technical details: " + err.message);
     WSH.StdErr.WriteLine("  Error code: " + err.number.toHRESULT());
     WSH.Quit(100);
@@ -92,7 +92,7 @@ if (namedArgs.Exists("Q")) {
             ip.Filters(1).Properties("Quality") = quality;
         }
         catch (err) {
-            WSH.StdErr.WriteLine("[warn] Unable to set the quality of the output series of images to " + quality + ". Proceeding with the default image quality (100)...");
+            WSH.StdErr.WriteLine("[warn] Unable to set the quality of the output images to " + quality + ". Proceeding with the default image quality (100)...");
             WSH.StdErr.WriteLine("  Technical details: " + err.message);
             WSH.StdErr.WriteLine("  Error code: " + err.number.toHRESULT());
         }
