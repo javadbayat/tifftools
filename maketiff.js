@@ -23,7 +23,7 @@ try {
     var ip = WSH.CreateObject("WIA.ImageProcess");
 }
 catch (err) {
-    WSH.StdErr.WriteLine("[error] Unable to create an instance of the ImageProcess object. Most likely you are running an old version of Microsoft Windows, which does not have Windows Image Acquisition (WIA) library v2.0 installed.");
+    WSH.StdErr.WriteLine("[error] Unable to create an instance of the ImageProcess object. Most likely you are running an old version of Microsoft Windows, which lacks Windows Image Acquisition (WIA) library v2.0.");
     WSH.StdErr.WriteLine("  Technical details: " + err.message);
     WSH.StdErr.WriteLine("  Error code: " + err.number.toHRESULT());
     WSH.Quit(100);
