@@ -1,6 +1,9 @@
 # TIFF Tools
 This repository contains two free light-weight scripts - written in [JScript](http://msdn.microsoft.com/library/hbxc2t98.aspx) - that can be used [to create and/or split multipage TIFF files](https://www.ilovefreesoftware.com/03/windows/image-photo/free-multipage-tiff-creator-to-create-multipage-tif-images.html). These scripts use [the Windows Image Acquisition (WIA) library v2.0](https://learn.microsoft.com/en-us/previous-versions/windows/desktop/wiaaut/-wiaaut-startpage), which is implemented by the file `wiaaut.dll`, located in the `C:\Windows\System32` folder. The second version of the WIA library that is required for the scripts is shipped with Windows Vista and later; so **it is not possible to run these scripts on Windows XP or older versions of Windows**.
 
+> [!NOTE]
+> For an improved version based on the [Active Station](https://github.com/javadbayat/ActiveStation) technology, see [TIFF Tools X](https://github.com/javadbayat/tiffToolsX).
+
 ## SplitTIFF.js
 `SplitTIFF.js` is a light-weight script (bearly 5.85 KB in size) that takes a multi-page TIFF file as input and stores each of its pages into a separate single-page image file in one of these formats: **PNG, TIFF, JPEG, BMP, or GIF**  
 It's such a free, easy-to-use TIFF Splitter utility!
